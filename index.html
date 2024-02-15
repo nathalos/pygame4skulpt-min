@@ -1,0 +1,65 @@
+<html>
+<!-- 
+Minimal pygame4skulpt implementation. 
+Based on Petlja's pygame4skulpt (https://github.com/Petlja/pygame4skulpt)
+and hacked to bits by Nathalos
+-->
+<head>
+    <script src="./js/skulpt.min.js" type="text/javascript"></script>
+    <script src="./js/skulpt-stdlib.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/core.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./css/style.css" />
+	<script type="text/x-python" id="program">
+import pygame as pg, random
+
+pg.init()
+
+pg.key.set_repeat(50, 25)
+
+pg.display.set_caption("setanje imga")
+
+(w, h) = (1280, 720)
+scr = pg.display.set_mode((w, h))
+
+img = pg.image.load('./img/spaceship.png')
+img_w = img.get_width()
+img_h = img.get_height()
+
+# coords for centre of screen
+(x, y) = (w / 2, h / 2)
+(dx, dy) = (10, 10)
+
+key2move = {pg.K_LEFT: (-dx, 0),
+           pg.K_RIGHT: (dx, 0),
+           pg.K_DOWN: (0, dy),
+           pg.K_UP: (0, -dy)}
+
+refresh = True
+quit = False
+while not quit:
+    if refresh:
+       scr.fill(pg.Color("black"))
+       scr.blit(img, (x - img_w / 2, y - img_h / 2))
+       pg.display.update()
+       refresh = False
+
+    ev = pg.event.wait()
+    if ev.type == pg.QUIT:
+        quit = True
+    if ev.type == pg.KEYDOWN:
+        if ev.key in key2move:
+           (DX, DY) = key2move[ev.key]
+           x += DX
+           y += DY
+           refresh = True
+
+pg.quit()
+	</script>
+</head>
+<body>
+    <div id="mycanvas"><canvas /></div>
+</body>
+</html>
+

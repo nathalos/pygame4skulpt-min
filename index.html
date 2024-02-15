@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <!-- 
 Minimal pygame4skulpt implementation. 
@@ -5,12 +6,15 @@ Based on Petlja's pygame4skulpt (https://github.com/Petlja/pygame4skulpt)
 and hacked to bits by Nathalos
 -->
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/skulpt.min.js" type="text/javascript"></script>
     <script src="./js/skulpt-stdlib.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/core.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
-	<link rel="stylesheet" href="./css/style.css" />
+    <script type="text/x-python" id="program" src="./py/snake.py"></script>
+	<!--
 	<script type="text/x-python" id="program">
 import pygame as pg, random
 
@@ -56,7 +60,7 @@ while not quit:
            refresh = True
 
 pg.quit()
-	</script>
+	</script> -->
 </head>
 <body>
     <div id="mycanvas"><canvas /></div>

@@ -1,0 +1,14 @@
+body {
+	background-color: #202530;
+	padding: 0px;
+	margin: 0px;
+}
+div {
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+canvas {
+	width: 1280;
+	height: 720;
+}
